@@ -5,6 +5,9 @@
   <object class="GtkWindow" id="prefswin">
     <property name="can_focus">False</property>
     <property name="border_width">6</property>
+    <property name="default-width">600</property>
+    <property name="default-height">300</property>
+
     <child type="titlebar">
       <object class="GtkHeaderBar" id="hb">
         <property name="show_close_button">true</property>
@@ -23,13 +26,15 @@
       <object class="GtkVBox" id="box">
         <property name="can_focus">False</property>
         <property name="baseline_position">bottom</property>
+        <property name="spacing">5</property>
         <child>
           <object class="GtkBox" id="entrybox">
             <property name="can_focus">False</property>
+              <property name="spacing">5</property>
             <child>
               <object class="GtkLabel" id="entrylabel">
                 <property name="can_focus">False</property>
-                <property name="label">Enter Into Entry 1: </property>
+                <property name="label">File Paths: </property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -39,12 +44,23 @@
             </child>
             <child>
               <object class="GtkEntry" id="entry">
-                <property name="placeholder_text">Entry 1</property>
+                <property name="placeholder_text"></property>
               </object>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="browse_backup_dirs">
+                <property name="label">Browse...</property>
+                <signal name="clicked" handler="onBackupDirsBtnClicked"></signal>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
