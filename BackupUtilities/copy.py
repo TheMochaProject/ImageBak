@@ -1,3 +1,7 @@
+# config.py by Ramesh Balaji
+# Part of ImageBak, Image Backup System for all Operating Systems, controlled in software, not by preboot
+#
+#
 import shutil
 import os
 
