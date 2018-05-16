@@ -9,3 +9,8 @@ So far the backup and restore and preferences UI have been completed. Stay tuned
 # Todo
 - Progress Bar for zipping and unzipping
 - Set `zip_safe = False`
+
+# Features
+- Back up images to Bzip2 compressed zip files
+  - Restore these images on new/re-imaged computers
+- Clean UI written in PyGTK3 with fast UI development because of Glade XML files
