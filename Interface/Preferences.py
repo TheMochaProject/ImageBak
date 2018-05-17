@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.abspath('..'))
 from Configuration import config
 
 class Handlers:
-    def entry1validate(self, widget):
+    def entry1validat(self, widget):
         print(builder.get_object("entry").get_text())
 
     def entry2validate(self, widget):

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.3"/>
+  <object class="GtkWindow" id="mainwin">
+    <property name="can_focus">False</property>
+    <property name="border_width">6</property>
+    <property name="default-width">600</property>
+    <property name="default-height">300</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="hb">
+        <property name="show_close_button">true</property>
+        <property name="title">ImageBak</property>
+        <child>
+          <object class="GtkButton" id="baknow">
+            <property name="label">Back Up Now</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
