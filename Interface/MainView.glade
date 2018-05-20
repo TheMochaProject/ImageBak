@@ -9,14 +9,40 @@
     <property name="default-height">300</property>
     <child type="titlebar">
       <object class="GtkHeaderBar" id="hb">
-        <property name="show_close_button">true</property>
+          <property name="show_close_button">true</property>
         <property name="title">ImageBak</property>
+
+        <child>
+          <object class="GtkBox" id="hb_box">
         <child>
           <object class="GtkButton" id="baknow">
             <property name="label">Back Up Now</property>
           </object>
+          <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+           </packing>
+       </child>
+       <child>
+          <object class="GtkButton" id="openprefs">
+            <property name="label">Preferences</property>
+            <signal name="clicked" handler="preferences_open"></signal>
+          </object>
+          <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+          </packing>
         </child>
+       </object>
+        </child>
+
+
       </object>
+    </child>
+    <child>
+
     </child>
   </object>
 </interface>
