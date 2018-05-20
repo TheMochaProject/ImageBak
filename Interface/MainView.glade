@@ -42,7 +42,21 @@
       </object>
     </child>
     <child>
-
+      <object class="GtkVBox" id="vbox">
+        <child>
+          <object class="GtkLabel" id="info_pressbtn">
+            <property name="label">Welcome to ImageBak! Press "Back Up Now" to get started.</property>
+            <attributes>
+                <attribute name="weight" value="PANGO_WEIGHT_BOLD" start="27" end="40"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="expand">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
     </child>
   </object>
 </interface>
