@@ -76,7 +76,7 @@
             <child>
               <object class="GtkLabel" id="entrylabel1">
                 <property name="can_focus">False</property>
-                <property name="label">Enter Text into Entry 2: </property>
+                <property name="label">Backup Location: </property>
               </object>
               <packing>
                 <property name="expand">True</property>
