@@ -5,21 +5,13 @@
   <object class="GtkWindow" id="prefswin">
     <property name="can_focus">False</property>
     <property name="border_width">6</property>
-    <property name="default-width">600</property>
-    <property name="default-height">300</property>
+    <property name="default-width">800</property>
+    <property name="default-height">120</property>
 
     <child type="titlebar">
       <object class="GtkHeaderBar" id="hb">
         <property name="show_close_button">true</property>
         <property name="title">Preferences</property>
-        <child>
-          <object class="GtkButton" id="btn3">
-            <property name="label">Close</property>
-          </object>
-          <object class="GtkButton" id="filechooserbtn">
-            <property name="label">Open</property>
-          </object>
-        </child>
       </object>
     </child>
     <child>
@@ -63,11 +55,11 @@
                 <property name="position">2</property>
               </packing>
             </child>
-          </object>
+    </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
           </packing>
         </child>
         <child>
@@ -86,7 +78,7 @@
             </child>
             <child>
               <object class="GtkEntry" id="entry1">
-                <property name="placeholder_text">Entry 2</property>
+                <property name="placeholder_text">Backup Location</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -94,40 +86,28 @@
                 <property name="position">1</property>
               </packing>
             </child>
+             <child>
+              <object class="GtkButton">
+                <property name="label">Browse...</property>
+                <signal name="clicked" handler="onSelectBackupLocationBtnClicked"></signal>
+              </object>
+               <packing>
+                   <property name="expand">True</property>
+                  <property name="fill">True</property>
+                  <property name="position">2</property>
+               </packing>
+            </child>
+
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="btn2">
-            <property name="label" translatable="yes">Validate Entry 1</property>
-            <property name="can_focus">False</property>
-            <property name="receives_default">False</property>
-            <signal name="clicked" handler="entry1validate" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="btn">
-            <property name="label" translatable="yes">Validate Entry 2</property>
-            <property name="can_focus">False</property>
-            <property name="receives_default">False</property>
-            <signal name="clicked" handler="entry2validate" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">3</property>
-          </packing>
-        </child>
-      </object>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+            </packing>
+  </child>
+
+
+</object>
     </child>
   </object>
-</interface>
+        </interface>

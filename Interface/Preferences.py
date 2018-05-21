@@ -37,15 +37,29 @@ class Handlers:
         builder.get_object("entry").set_text(config.get_value("folderstobak"))
         dialog.destroy()
 
+    def onSelectBackupLocationBtnClicked(self, widget):
+        dialog = Gtk.FileChooserDialog("Choose a Folder: ", None, Gtk.FileChooserAction.SELECT_FOLDER,(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK))
+        dialog.set_default_size(800, 600)
 
+        response = dialog.run()
+        filename = ""
+        if response == Gtk.ResponseType.OK:
+            print(dialog.get_filename())
+            filename = dialog.get_filename()
+            config.set_value('backuploc', filename)
+        elif response == Gtk.ResponseType.CANCEL:
+            print("Cancel clicked")
+
+        builder.get_object("entry1").set_text(config.get_value("backuploc"))
+        dialog.destroy()
 def run():
 
     builder.add_from_file("Preferences.glade")
 
     builder.connect_signals(Handlers())
-    builder.get_object("btn3").connect('clicked', Gtk.main_quit)
     builder.get_object("prefswin").connect('destroy', Gtk.main_quit)
-    builder.get_object("entry").set_text(config.get_value("folderstobak"))
+    builder.get_object("entry").set_text(config.get_value("folderstobak").strip())
+    builder.get_object("entry1").set_text(config.get_value("backuploc").strip())
     window = builder.get_object("prefswin")
     window.show_all()
 
