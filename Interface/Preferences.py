@@ -9,6 +9,8 @@ sys.path.insert(0, os.path.abspath('..'))
 
 from Configuration import config
 
+builder = Gtk.Builder()
+
 class Handlers:
     def entry1validate(self, widget):
         print(builder.get_object("entry").get_text())
@@ -37,7 +39,7 @@ class Handlers:
 
 
 def run():
-    builder = Gtk.Builder()
+
     builder.add_from_file("Preferences.glade")
 
     builder.connect_signals(Handlers())

@@ -33,4 +33,4 @@ def set_value(key, val):
     with open(dir_path + "/config.cfg", 'w') as config:
         config.writelines(configuration_array)
 
-print(get_value("mounted_backuploc"))
+#print(get_value("mounted_backuploc"))
