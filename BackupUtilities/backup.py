@@ -6,7 +6,7 @@ from time import gmtime, strftime
 
 from Configuration import config
 import shutil
-import ziptools
+import BackupUtilities.ziptools as ziptools
 import traceback
 
 class Backup:
@@ -34,6 +34,3 @@ class Backup:
                     traceback.print_exc()
         if success:
             print("DEBUG: backup of dirs: " + str(self.folders_to_backup) + " has been completed" )
-
-c = Backup()
-c.backup()

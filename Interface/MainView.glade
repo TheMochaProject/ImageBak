@@ -17,6 +17,7 @@
         <child>
           <object class="GtkButton" id="baknow">
             <property name="label">Back Up Now</property>
+            <signal name="clicked" handler="backup_now"></signal>
           </object>
           <packing>
                 <property name="expand">True</property>
@@ -44,11 +45,8 @@
     <child>
       <object class="GtkVBox" id="vbox">
         <child>
-          <object class="GtkLabel" id="info_pressbtn">
+          <object class="GtkLabel" id="info">
             <property name="label">Welcome to ImageBak! Press "Back Up Now" to get started.</property>
-            <attributes>
-                <attribute name="weight" value="PANGO_WEIGHT_BOLD" start="27" end="40"/>
-            </attributes>
           </object>
           <packing>
             <property name="expand">True</property>
