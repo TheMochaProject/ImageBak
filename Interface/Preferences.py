@@ -46,7 +46,7 @@ class Handlers:
         if response == Gtk.ResponseType.OK:
             print(dialog.get_filename())
             filename = dialog.get_filename()
-            config.set_value('folderstobak', filename)
+            config.set_value('backuploc', filename)
         elif response == Gtk.ResponseType.CANCEL:
             print("Cancel clicked")
 
