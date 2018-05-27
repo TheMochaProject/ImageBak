@@ -23,9 +23,9 @@ def compress_dir(dirname, target):
 
     os.remove('tmp.zip')
 
-def decompress_dir(archivename, target_parent_dir, dirname):
+def decompress_dir(archivename, target_parent_dir):
     """Copies the zip_bz2 file to the specified target parent directory under folder dirname, returns false if directory exists"""
-
+    dirname = os.path.basename(target_parent_dir)
     try:
         if dirname[-1] == "/":
             os.mkdir(target_parent_dir + dirname)
