@@ -25,7 +25,9 @@ def compress_dir(dirname, target):
 
 def decompress_dir(archivename, target_parent_dir):
     """Copies the zip_bz2 file to the specified target parent directory under folder dirname, returns false if directory exists"""
+
     dirname = os.path.basename(target_parent_dir)
+    target_parent_dir = os.path.dirname(os.path.normpath(target_parent_dir))
     try:
         if dirname[-1] == "/":
             os.mkdir(target_parent_dir + dirname)
@@ -39,7 +41,7 @@ def decompress_dir(archivename, target_parent_dir):
     with open(dirname + ".zip", 'wb') as bz2data:
         bz2data.write(bz2_decompress)
 
-    zipobj = zipfile.ZipFile(dirname+'.zip', 'r')
+    zipobj = zipfile.ZipFile(dirname+ '.zip', 'r')
     if dirname[-1] == "/":
             zipobj.extractall(target_parent_dir + archivename)
     else:
