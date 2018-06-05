@@ -33,8 +33,10 @@ class Handlers:
         hour = selected_backup[4]
         minute = selected_backup[5]
         second = selected_backup[6]
+        builder.get_object('info').set_label("Restoring the backup...")
         restore_obj = restore.Restore()
         restore_obj.restore(month, day, year, hour, minute, second)
+        builder.get_object('info').set_label("Restore complete!\nYou can now use the folders that have been restored from the backup.")
 
 builder = Gtk.Builder()
 builder.add_from_file("MainView.glade")
