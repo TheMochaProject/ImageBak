@@ -6,7 +6,7 @@ from time import gmtime, strftime
 
 from Configuration import config
 import shutil
-import ziptools
+import BackupUtilities.ziptools as ziptools
 import traceback
 import glob
 
