@@ -18,7 +18,7 @@ def get_value(key):
     for configline in configuration_array:
         config_keyval = configline.split(" ")
         if config_keyval[0] == key:
-            return config_keyval[1]
+            return config_keyval[1].strip()
 
 
 

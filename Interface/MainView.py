@@ -10,6 +10,7 @@ sys.path.insert(0, os.path.abspath('..'))
 from BackupUtilities import backup
 
 import Preferences
+
 class Handlers:
     def preferences_open(self, widget):
         Preferences.run()
@@ -18,6 +19,8 @@ class Handlers:
         backup_obj = backup.Backup()
         backup_obj.backup()
         builder.get_object('info').set_label("Backup complete!\nPress Restore to select and restore from a backup!")
+    def restore_now(self, widget):
+        pass
 
 builder = Gtk.Builder()
 builder.add_from_file("MainView.glade")
