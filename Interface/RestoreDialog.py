@@ -13,9 +13,9 @@ import glob
 class RestoreDialog(Gtk.Dialog):
     def __init__(self, parent):
         Gtk.Dialog.__init__(self, "Select Backup to Restore", parent, 0)
-        self.set_default_size(600,150)
+        self.set_default_size(600,100)
 
-        self.response_vbox = Gtk.VBox(spacing=10)
+        self.response_vbox = Gtk.VBox(spacing=5)
         self.selected_backup = ""
         self.response_boxes = {}
         self.button_mapper = {}
