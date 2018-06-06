@@ -15,12 +15,15 @@ from Configuration import config
 
 def compress_dir(dirname, target):
     """Compress a directory to a bzip2 image"""
+
+    # Make the archive as temp file
     shutil.make_archive('tmp', 'zip', dirname)
+    # COmpress zip file with bz2 compression level
     with open('tmp.zip', 'rb') as data:
         bz2_compress = bz2.compress(data.read(), int(config.get_value('compression_level')))
         with open(target, 'wb') as writedata:
             writedata.write(bz2_compress)
-
+    # Delete temporary file
     os.remove('tmp.zip')
 
 def decompress_dir(archivename, target_parent_dir):
@@ -50,4 +53,11 @@ def decompress_dir(archivename, target_parent_dir):
 
     os.remove(dirname + '.zip')
 
-        
+def make_zip_zipfile(dirname, target):
+    """BETA function
+
+
+
+
+
+    """
