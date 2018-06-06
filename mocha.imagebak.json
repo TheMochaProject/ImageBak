@@ -1,0 +1,25 @@
+{
+ "app-id":"mocha.ImageBak",
+ "runtime":"org.gnome.Platform",
+ "runtime-version": "3.28",
+ "sdk": "org.gnome.Sdk",
+ "command": "cd Interface;python3 MainView.py",
+ "modules":[
+        {
+            "name": "ImageBak",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D ./ /opt/ImageBak"
+            ],
+            "sources": [
+                {
+                    "type": "directory",
+                    "path": "."
+                }
+            ]
+        }
+    ]
+
+
+
+}

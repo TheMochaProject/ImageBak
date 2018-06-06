@@ -55,9 +55,6 @@ def decompress_dir(archivename, target_parent_dir):
 
 def make_zip_zipfile(dirname, target):
     """BETA function
-
-
-
-
-
+        there is nothing here so far
     """
+    pass
