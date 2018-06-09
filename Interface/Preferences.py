@@ -54,7 +54,10 @@ class Handlers:
         dialog.destroy()
 def run():
 
-    builder.add_from_file("Preferences.glade")
+    if os.path.basename(os.getcwd()) == "Interface":
+        builder.add_from_file("Preferences.glade")
+    elif os.path.basename(os.getcwd()) == "ImageBak":
+       	builder.add_from_file("Interface/Preferences.glade")
 
     builder.connect_signals(Handlers())
     builder.get_object("prefswin").connect('destroy', Gtk.main_quit)

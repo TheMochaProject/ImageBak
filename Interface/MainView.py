@@ -9,9 +9,11 @@ import os
 sys.path.insert(0, os.path.abspath('..'))
 
 from BackupUtilities import backup, restore
-import Preferences
-from RestoreDialog import RestoreDialog
+from Interface import Preferences
+from Interface.RestoreDialog import RestoreDialog
 
+global builder
+builder = Gtk.Builder()
 class Handlers:
     def preferences_open(self, widget):
         Preferences.run()
@@ -38,12 +40,17 @@ class Handlers:
         restore_obj = restore.Restore()
         restore_obj.restore(month, day, year, hour, minute, second)
         builder.get_object('info').set_label("Restore complete!\nYou can now use the folders that have been restored from the backup.")
+def main():
+	if os.path.basename(os.getcwd()) == "Interface":
+		builder.add_from_file("MainView.glade")
+	elif os.path.basename(os.getcwd()) == "ImageBak":
+       		builder.add_from_file("Interface/MainView.glade")
+	builder.connect_signals(Handlers())
 
-builder = Gtk.Builder()
-builder.add_from_file("MainView.glade")
-builder.connect_signals(Handlers())
+	window = builder.get_object("mainwin")
+	builder.get_object('mainwin').connect('destroy', Gtk.main_quit)
+	window.show_all()
+	Gtk.main()
 
-window = builder.get_object("mainwin")
-builder.get_object('mainwin').connect('destroy', Gtk.main_quit)
-window.show_all()
-Gtk.main()
+if __name__=='__main__':
+    main(builder)
