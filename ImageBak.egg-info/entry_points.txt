@@ -1,0 +1,3 @@
+[gui_scripts]
+ImageBak = src.__main__:main
+
