@@ -61,7 +61,15 @@ def run():
 
     builder.connect_signals(Handlers())
     builder.get_object("prefswin").connect('destroy', Gtk.main_quit)
-    builder.get_object("entry").set_text(config.get_value("folderstobak").strip())
+    folderstobak_list = config.get_value('folderstobak').strip().split(';')
+    label_dict = {}
+    for folder in folderstobak_list:
+        label_to_insert = Gtk.Label(folder)
+        label_dict[folder] = label_to_insert
+        temp_gtklistboxrow = Gtk.ListBoxRow()
+        temp_gtklistboxrow.add(label_to_insert)
+        builder.get_object('folders_listbox').add(temp_gtklistboxrow)
+    #builder.get_object("entry").set_text(config.get_value("folderstobak").strip())
     builder.get_object("entry1").set_text(config.get_value("backuploc").strip())
     window = builder.get_object("prefswin")
     window.show_all()
