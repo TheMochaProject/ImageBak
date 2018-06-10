@@ -1,0 +1,14 @@
+{
+  "name": "ImageBak",
+  "buildsystem": "simple",
+  "build-commands": [
+    "pip3 install --prefix=/app --no-deps ."
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "file://dist/ImageBak-0.6.tar.gz",
+      "sha256": "d25a65c0a7521a786c2b9224d70ddfadab0404813ff0e60b8a89d44599a33ec4"
+    }
+  ]
+}
