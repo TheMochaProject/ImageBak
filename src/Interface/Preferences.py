@@ -27,12 +27,13 @@ class Handlers:
         if response == Gtk.ResponseType.OK:
             print(dialog.get_filename())
             filename = dialog.get_filename()
+            if config.get_value('folderstobak').strip() == "":
+                config.set_value('folderstobak', filename.strip())
+       	    else:
+                config.set_value('folderstobak', config.get_value("folderstobak").strip() + ";" + filename.strip())
+
         elif response == Gtk.ResponseType.CANCEL:
             print("Cancel clicked")
-        if config.get_value('folderstobak').strip() == "":
-            config.set_value('folderstobak', filename.strip())
-        else:
-            config.set_value('folderstobak', config.get_value("folderstobak").strip() + ";" + filename.strip())
 
         builder.get_object("entry").set_text(config.get_value("folderstobak"))
         dialog.destroy()
@@ -49,7 +50,8 @@ class Handlers:
             config.set_value('backuploc', filename)
         elif response == Gtk.ResponseType.CANCEL:
             print("Cancel clicked")
-
+        elif response == Gtk.ResponseType.NONE:
+     	    print("No response recorded!")
         builder.get_object("entry1").set_text(config.get_value("backuploc"))
         dialog.destroy()
 def run():
