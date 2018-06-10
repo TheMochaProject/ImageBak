@@ -1,6 +1,5 @@
 MANIFEST.in
 README.txt
-setup.cfg
 setup.py
 ImageBak.egg-info/PKG-INFO
 ImageBak.egg-info/SOURCES.txt
