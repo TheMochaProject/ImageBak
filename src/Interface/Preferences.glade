@@ -35,20 +35,41 @@
               </packing>
             </child>
             <child>
-              <object class="GtkListBox" id="folders_listbox">
+              <object class="GtkVBox" id="listvbox">
+                <child>
+                  <object class="GtkListBox" id="folders_listbox">
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="addremovebox">
+                    <child>
+                        <object class="GtkButton" id="browse_backup_dirs">
+                          <property name="label">+</property>
+                          <signal name="clicked" handler="onBackupDirsBtnClicked"></signal>
+                        </object>
+                        <packing>
+                          <property name="expand">True</property>
+                          <property name="fill">True</property>
+                          <property name="position">0</property>
+                        </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+
               </object>
+
             </child>
-            <child>
-              <object class="GtkButton" id="browse_backup_dirs">
-                <property name="label">Browse...</property>
-                <signal name="clicked" handler="onBackupDirsBtnClicked"></signal>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
+
     </object>
           <packing>
                 <property name="expand">True</property>
