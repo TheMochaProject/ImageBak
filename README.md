@@ -9,7 +9,8 @@ The interface works, but there are more UX features to come!
 # Todo
 - Progress Bar for zipping and unzipping
 - Set `zip_safe = False`
-- Add viewing of backups in restore interface
+- Append .bz2 to zip files
+- Add Gtk.Grid as container instead of Gtk.Box and Gtk.VBox
 
 # Features
 - Back up images to Bzip2 compressed zip files
