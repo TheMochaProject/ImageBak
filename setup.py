@@ -12,6 +12,8 @@ class CustomInstall(install):
                 for p in sys.path[1:]:
                     if "ImageBak" in p:
                         return os.path.join(p, "src")
+                    elif "dist-packages" in p:
+                        return os.path.join(os.path.join(p, "ImageBak-0.6.egg-info"), "src")
             install_path = find_module_path()
             print("Executing post-install scripts...\nReplacing the existing ImageBak script...")
             print("DEBUG: install_path is " + install_path)

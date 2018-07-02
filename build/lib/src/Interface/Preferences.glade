@@ -26,7 +26,7 @@
             <child>
               <object class="GtkLabel" id="entrylabel">
                 <property name="can_focus">False</property>
-                <property name="label">Folders to Back Up: </property>
+                <property name="label">File Paths: </property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -35,46 +35,26 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="foldersbox">
-                <child>
-                  <object class="GtkListBox" id="folders_listbox"></object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">0</property>
-                      </packing>
-                </child>
-                <child>
-                  <object class="GtkBox" id="add_rem_backup_dirs">
-                    <child>
-                      <object class="GtkButton" id="browse_backup_dirs">
-                          <property name="label">+</property>
-                          <signal name="clicked" handler="onBackupDirsBtnClicked"></signal>
-                      </object>
-                      <packing>
-                          <property name="expand">True</property>
-                          <property name="fill">True</property>
-                          <property name="position">0</property>
-                      </packing>
-                   </child>
-                   <child>
-                     <object class="GtkButton" id="rem_backup_dirs">
-                       <property name="label">-</property>
-                       <signal name="clicked" handler="onRemoveBackupDirsBtnClicked"></signal>
-                     </object>
-                     <packing>
-                       <property name="expand">True</property>
-                       <property name="fill">True</property>
-                       <property name="position">1</property>
-                     </packing>
-                   </child>
-                  </object>
-                </child>
-
+              <object class="GtkEntry" id="entry">
+                <property name="placeholder_text"></property>
               </object>
-
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
-
+            <child>
+              <object class="GtkButton" id="browse_backup_dirs">
+                <property name="label">Browse...</property>
+                <signal name="clicked" handler="onBackupDirsBtnClicked"></signal>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
     </object>
           <packing>
                 <property name="expand">True</property>

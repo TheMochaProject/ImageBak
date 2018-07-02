@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.3"/>
+  <object class="GtkWindow" id="prefswin">
+    <property name="can_focus">False</property>
+    <property name="border_width">6</property>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkVBox" id="box">
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkBox" id="entrybox">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="entrylabel">
+                <property name="can_focus">False</property>
+                <property name="label">Enter Into Entry 1: </property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry">
+                <property name="can_focus">False</property>
+                <property name="placeholder_text">Entry 1</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="entrybox1">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="entrylabel1">
+                <property name="can_focus">False</property>
+                <property name="label">Enter Text into Entry 2: </property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry1">
+                <property name="can_focus">False</property>
+                <property name="placeholder_text">Entry 2</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btn2">
+            <property name="label" translatable="yes">Validate Entry 1</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">False</property>
+            <signal name="clicked" handler="entry1validate" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btn">
+            <property name="label" translatable="yes">Validate Entry 2</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">False</property>
+            <signal name="clicked" handler="entry2validate" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
