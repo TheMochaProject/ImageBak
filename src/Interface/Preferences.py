@@ -96,6 +96,11 @@ class Handlers:
         print("DEBUG: new folders to bak str is: " + folderstobak_str)
         #write to config.cfg
         config.set_value('folderstobak', folderstobak_str)
+    def onEnableDaemonSwitchEnabled(self, switch, gparam):
+        if switch.get_active():
+            print("DEBUG: switch enabled")
+        else:
+            print("DEBUG: switch disabled")
 def run():
     script_running_in_full = os.path.dirname(os.path.realpath(__file__))
     print("DEBUG: os.getcwd basename is: " + script_running_in_full)

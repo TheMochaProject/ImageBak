@@ -2,7 +2,7 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath('..'))
 
-from time import gmtime, strftime
+from time import gmtime, strftime,localtime
 
 from Configuration import config
 import shutil
@@ -13,7 +13,7 @@ class Backup:
     def __init__(self):
         self.backup_dir = config.get_value("backuploc")
         self.folders_to_backup = config.get_value('folderstobak').strip().split(';')
-        self.backup_time = strftime('%Y_%m_%d_%H_%M_%S', gmtime())
+        self.backup_time = strftime('%Y_%m_%d_%H_%M_%S', localtime())
         self.back_path = self.backup_dir.strip() + "/backup_" + self.backup_time
         #print(self.back_path)
         if os.path.exists(self.back_path):

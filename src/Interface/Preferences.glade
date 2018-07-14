@@ -125,7 +125,35 @@
                 <property name="position">1</property>
             </packing>
   </child>
+  <child>
+    <object class="GtkBox" id="enable_daemon_settings">
+      <child>
+        <object class="GtkLabel" id="enable_daemon_label">
+          <property name="label">Backup in the background? </property>
 
+        </object>
+        <packing>
+          <property name="expand">True</property>
+          <property name="fill">True</property>
+          <property name="position">0</property>
+        </packing>
+      </child>
+
+
+
+
+      <child>
+        <object class="GtkSwitch" id="enable_daemon_switch">
+          <signal name="notify::active" handler="onEnableDaemonSwitchEnabled"></signal>
+      </object>
+        <packing>
+          <property name="expand">True</property>
+          <property name="fill">False</property>
+          <property name="position">1</property>
+        </packing>
+      </child>
+    </object>
+  </child>
 
 </object>
     </child>

@@ -26,6 +26,7 @@ class Restore:
         print("DEBUG: Restoring from "+ self.backups_dir.strip() + "/" + self.__getBackupLocation(month, day, year, hours, minutes, seconds)  + "/*.zip")
         for filename in glob.glob(self.backups_dir.strip() + "/" + self.__getBackupLocation(month, day, year, hours, minutes, seconds)  + "/*.zip"):
             print("DEBUG: restoring " + filename + " to " + self.restore_dirmapper.get(os.path.basename(filename).split('.')[0]))
+            print("DEBUG: rmtree " + self.restore_dirmapper.get(os.path.basename(filename).split('.')[0]))
             shutil.rmtree(self.restore_dirmapper.get(os.path.basename(filename).split('.')[0]))
             ziptools.decompress_dir(filename, self.restore_dirmapper.get(os.path.basename(filename).split('.')[0]))
 
